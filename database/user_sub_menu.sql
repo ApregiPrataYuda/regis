@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2023 at 10:43 AM
+-- Generation Time: Jan 26, 2023 at 10:35 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.4.20
 
@@ -41,8 +41,11 @@ CREATE TABLE `user_sub_menu` (
 --
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active`) VALUES
-(1, 1, 'Dashboard', 'admin_page', 'fas fa-chart-line', 1),
-(2, 2, 'my_profile', 'user_page', 'fa fa-users', 1);
+(1, 1, 'Dashboard', 'Admin', 'fas fa-chart-line', 1),
+(2, 2, 'my profile', 'User', 'fa fa-users', 1),
+(3, 2, 'edit profile', 'User/edit', 'fa fa-edit', 1),
+(4, 3, 'Management Menu', 'Menu', 'fa fa-file', 1),
+(5, 3, 'Management Submenu', 'Menu/Submenu', 'fa fa-file', 1);
 
 --
 -- Indexes for dumped tables
@@ -62,7 +65,7 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

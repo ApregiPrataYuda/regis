@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2023 at 10:43 AM
+-- Generation Time: Jan 26, 2023 at 10:34 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.4.20
 
@@ -44,7 +44,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
 (10, 'xioa', 'xioa@gmail.com', 'default.png', '8cb2237d0679ca88db6464eac60da96345513964', 2, 1, 1674633820),
-(9, 'admin', 'admin@gmail.com', 'default.png', '8cb2237d0679ca88db6464eac60da96345513964', 1, 1, 1674629736),
+(9, 'rexa', 'admin@gmail.com', 'default.png', '8cb2237d0679ca88db6464eac60da96345513964', 1, 1, 1674629736),
 (8, 'apregi', 'tes@gmail.com', 'default.png', '8cb2237d0679ca88db6464eac60da96345513964', 2, 1, 1674629687);
 
 --

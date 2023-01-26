@@ -57,26 +57,30 @@ class Auth extends CI_Controller {
                         $email = $getdata['email'];
                         $created = $getdata['date_created'];
                         $image = $getdata['image'];
+                        $role_id = $getdata['role_id'];
                         $this->session->set_userdata('access', 'admin');
                         $this->session->set_userdata('id', $id);
                         $this->session->set_userdata('name', $name);
                         $this->session->set_userdata('email', $email);
                         $this->session->set_userdata('created', $created);
                         $this->session->set_userdata('image', $image);
-                        redirect('admin_page');
+                        $this->session->set_userdata('role_id', $role_id);
+                        redirect('Admin');
 
                       }elseif ($getdata['role_id'] == 2) { //user
                         $name = $getdata['name'];
                         $email = $getdata['email'];
                         $created = $getdata['date_created'];
                         $image = $getdata['image'];
+                        $role_id = $getdata['role_id'];
                         $this->session->set_userdata('access', 'user');
                         $this->session->set_userdata('id', $id);
                         $this->session->set_userdata('name', $name);
                         $this->session->set_userdata('email', $email);
                         $this->session->set_userdata('created', $created);
                         $this->session->set_userdata('image', $image);
-                        redirect('user_page');
+                        $this->session->set_userdata('role_id', $role_id);
+                        redirect('User');
 
                       }else {
                         $this->session->set_flashdata('error','Page Tidak Ditemukan');
