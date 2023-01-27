@@ -1,4 +1,4 @@
-<?php if ($this->session->userdata('access') == 'admin') { ?>
+
   
 
   <section class="content-header">
@@ -39,7 +39,7 @@
           <div class="card-body">
             <div class="card">
               <div class="card-header">
-                <a href="<?= site_url('Menu/Addsubmenu') ?>" class="btn btn-outline-info btn-sm"> <i class="fa fa-plus-square"> Tambah Data</i></a>
+                <a href="<?= site_url('Admin/addrole') ?>" class="btn btn-outline-info btn-sm"> <i class="fa fa-plus-square"> Tambah Data</i></a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -47,37 +47,31 @@
                   <thead>
                     <tr>
                       <th scope="col" style="width:5%">#No</th>
-                      <th scope="col">Nama Menu</th>
-                      <th scope="col">Nama SubMenu</th>
-                      <th scope="col">URL</th>
-                      <th scope="col">Icon</th>
-                      <th scope="col">status</th>
+                      <th scope="col">Role</th>
                       <th scope="col" style="width:5%">Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php 
+                   
+                  <?php 
                     $no=1;
-                    foreach ($rows as $key => $data) { ?>
+                    foreach ($row as $key => $data) { ?>
                     <tr>
                        <td><?= $no++?></td>
-                       <td><?= $data->menu?></td>
-                       <td><?= $data->title?></td>
-                       <td><?= $data->url?></td>
-                       <td><?= $data->icon?></td>
-                       <td><?= $data->is_active == 1 ? 'Aktif' : 'Nonaktif'?>
-                       <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1">Aktif/NonAktif</label>
-                      </div>
+                       <td><?= $data->role?></td>
                        </td>
                        <td>
-                        <a href="<?= site_url('Menu/Editsubmenu/'.$data->id)?>" class="btn btn-warning btn-xs">
+                      
+                        <a href="" class="btn btn-warning btn-xs">
                             <i class="fas fa-edit"></i>
                           </a>
 
-                          <a href="<?= site_url('Menu/Deletesubmenu/'.$data->id)?>" id="btn-hapus" class="btn btn-danger btn-xs">
+                          <a href="" id="btn-hapus" class="btn btn-danger btn-xs ml-2">
                             <i class="fas fa-trash"></i>
+                          </a>
+
+                          <a href="" class="btn btn-success btn-xs mt-1">
+                            <i class="fas fa-compress"> Access</i>
                           </a>
                         </td>
                     </tr>
@@ -99,7 +93,7 @@
   </section>
 
 
-<?php }   ?>
+
 
 
 
