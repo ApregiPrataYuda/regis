@@ -99,4 +99,49 @@ class Menumodels extends CI_model {
         $query = $this->db->query("SELECT * FROM role ORDER BY id ASC")->result();
         return $query;
     }
+
+
+    public function addrole($post)
+    {
+         $params = [
+             'role' => $post['role']
+         ];
+         $this->db->insert('role', $params);
+    }
+
+    public function deleterole($id)
+    {
+        $this->db->where('id',$id);
+        $this->db->delete('role');
+    }
+
+    public function getidrole($id)
+    {
+        $query = $this->db->query("SELECT * FROM role WHERE id = '$id'; ");
+        return  $query; 
+    }
+
+    public function editrole($post)
+    {
+        $params = [
+            'role' => $post['role']
+           
+        ];
+      $this->db->where('id', $post['id']);
+      $this->db->update('role',$params);
+    }
+
+
+    //code fot access
+
+    public function accessrole($id)
+    {
+        return $this->db->query("SELECT * FROM role WHERE id = '$id'")->result();
+         
+    }
+
+    public function getallmenus()
+    {
+        return $this->db->query("SELECT * FROM user_menu WHERE id != 1 ORDER BY id ASC")->result();
+    }
 }

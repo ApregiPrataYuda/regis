@@ -231,7 +231,24 @@
 
 
   <!-- Page specific script -->
-
+  <!-- script ajax access -->
+<script>
+$('.form-check-input').on('click',function() {
+  const menuId = $(this).data('menu');
+  const roleId = $(this).data('role');
+  $.ajax({
+      url:"<?= base_url('Admin/ubahAccess')?>",
+      type: "post",
+      data : {
+           menuId : menuId,
+           roleId : roleId
+      },
+       success : function() {
+          document.location.href = "<?= base_url('Admin/Access/')?>" + roleId;
+       }
+  });
+});
+</script>
 
   <script>
     $(function() {

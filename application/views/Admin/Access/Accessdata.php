@@ -1,7 +1,5 @@
 
-  
-
-  <section class="content-header">
+<section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
@@ -39,7 +37,7 @@
           <div class="card-body">
             <div class="card">
               <div class="card-header">
-                <a href="<?= site_url('Admin/addrole') ?>" class="btn btn-outline-info btn-sm"> <i class="fa fa-plus-square"> Tambah Data</i></a>
+                 access:  <?= $role[0]->role ?>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -47,35 +45,25 @@
                   <thead>
                     <tr>
                       <th scope="col" style="width:5%">#No</th>
-                      <th scope="col">Role</th>
-                      <th scope="col" style="width:5%">Action</th>
+                      <th scope="col">Menu</th>
+                      <th scope="col" style="width:5%">Access</th>
                     </tr>
                   </thead>
                   <tbody>
-                   
                   <?php 
                     $no=1;
-                    foreach ($row as $key => $data) { ?>
-                    <tr>
-                       <td><?= $no++?></td>
-                       <td><?= $data->role?></td>
-                       </td>
-                       <td>
-                      
-                        <a href="<?= site_url('Admin/editrole/'.$data->id)?>" class="btn btn-warning btn-xs">
-                            <i class="fas fa-edit"></i>
-                          </a>
-
-                          <a href="<?= site_url('Admin/deleterole/'.$data->id)?>" id="btn-hapus" class="btn btn-danger btn-xs ml-2">
-                            <i class="fas fa-trash"></i>
-                          </a>
-
-                          <a href="<?= site_url('Admin/Access/'.$data->id)?>" class="btn btn-success btn-xs mt-1">
-                            <i class="fas fa-compress"> Access</i>
-                          </a>
+                     foreach ($menus as $m) { ?>
+                       <tr>
+                        <td><?=$no++?></td>
+                        <td><?= $m->menu?></td>
+                        <td>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" <?= cek_akses($role[0]->id, $m->id)?> data-role="<?=$role[0]->id?>"
+                           data-menu="<?=$m->id?>">
+                        </div>
                         </td>
-                    </tr>
-                    <?php  } ?>
+                       </tr>
+                    <?php } ?>
                   </tbody>
                 </table>
               </div>
@@ -94,8 +82,6 @@
 
 
 
-
-
-
-
 <!--end view for admin head -->
+
+

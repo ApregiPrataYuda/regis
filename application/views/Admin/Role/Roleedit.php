@@ -25,18 +25,19 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-      <form action="" method="post">
+      <form action="<?= site_url('Admin/editprocess')?>" method="post">
         <div class="row">
 
           <div class="col-md-5 <?= form_error('role') ? '' : null ?>">
             <label for="role"><span> Role Admin*</span> </label>
-            <input type="text" name="role" value="<?= set_value('role'); ?>" class="form-control" placeholder="role Aplikasi....">
+            <input type="hidden" name="id" value="<?= $row->id ?>">
+            <input type="text" name="role" value="<?= $row->role ?>" class="form-control" placeholder="role user....">
             <small class="text-danger" style="font-style: italic "><span class="badge badge-danger"><?= form_error('role') ?></span></small>
           </div>
 
        </div>
         <div class="row ml-auto mb-3 mr-5 mt-3">
-          <button type="submit" name="add" class="btn btn-outline-secondary btn-sm ml-2"> <i class="fa fa-save"></i> Simpan</button>
+          <button type="submit" name="edit" class="btn btn-outline-secondary btn-sm ml-2"> <i class="fa fa-save"></i> Simpan</button>
           <button type="Reset" class="btn btn-outline-warning btn-sm ml-2"><i class="fa fa-undo"></i> Reset</button>
         </div>
       </form>
